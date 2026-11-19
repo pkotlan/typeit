@@ -1,4 +1,4 @@
-#import "template.typ": template
+#import "lib.typ": template
 
 
 // define the pages (possibly in separate files, then include them)
@@ -13,6 +13,14 @@
   #show: template.with("vague")
 
   #include "pages/gettingstarted.typ"
+
+] <gettingstarted>
+
+
+#document("components.html", title: [Components])[
+  #show: template.with("vague")
+
+  #include "pages/components.typ"
 
 ] <gettingstarted>
 

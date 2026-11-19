@@ -1,5 +1,4 @@
 #let template(theme, doc) = {
-  set text(fill: white)
 
   html.html({
     html.head({

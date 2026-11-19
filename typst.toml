@@ -1,0 +1,12 @@
+[package]
+name = "typeit"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Petr Kotlan <peta.kotlan@seznam.cz>"]
+license = "MIT"
+description = "Typst static site generator"
+homepage = "https://pkotlan.github.io/typeit/"
+repository = "https://github.com/pkotlan/typeit"
+keywords = ["templates"]
+categories = ["templates"]
+exclude = ["tests/**", "*.pdf", "pages/**"]
