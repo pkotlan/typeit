@@ -1,9 +1,9 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="vague.css"><title>Getting started</title></head><nav style="display: flex; gap: 1rem; flex-wrap: wrap;"><a href="home.html"><strong style="display: block">Home</strong></a><a href="#"><strong style="display: block">Getting started</strong></a></nav><body><h2>Getting started</h2><p>This is how you get started with typeit…</p><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"template.typ"</span>: template
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="vague.css"><title>Getting started</title></head><nav style="display: flex; gap: 1rem; flex-wrap: wrap;"><a href="index.html"><strong style="display: block">Home</strong></a><a href="#"><strong style="display: block">Getting started</strong></a></nav><body><h2>Getting started</h2><p>This is how you get started with typeit…</p><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"template.typ"</span>: template
 
 
 <span style="color: #74747c">// define the pages (possibly in separate files, then include them)</span>
 <span style="color: #74747c">// template will take care of the rest</span>
-<span style="color: #4b69c6">#</span><span style="color: #4b69c6">document</span>(<span style="color: #198810">"home.html"</span>, title: [Home])[
+<span style="color: #4b69c6">#</span><span style="color: #4b69c6">document</span>(<span style="color: #198810">"index.html"</span>, title: [Home])[
   <span style="color: #d73948">#</span><span style="color: #d73948">show</span>: template.<span style="color: #4b69c6">with</span>(<span style="color: #198810">"vague"</span>)
 
   <span style="color: #d73948">#</span><span style="color: #d73948">include</span> <span style="color: #198810">"pages/home.typ"</span>

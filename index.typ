@@ -3,7 +3,7 @@
 
 // define the pages (possibly in separate files, then include them)
 // template will take care of the rest
-#document("home.html", title: [Home])[
+#document("index.html", title: [Home])[
   #show: template.with("vague")
 
   #include "pages/home.typ"
