@@ -9,4 +9,4 @@ homepage = "https://pkotlan.github.io/typeit/"
 repository = "https://github.com/pkotlan/typeit"
 keywords = ["templates"]
 categories = ["templates"]
-exclude = ["tests/**", "*.pdf", "pages/**"]
+exclude = ["tests/**", "*.pdf", "pages/**", "docs/**"]
