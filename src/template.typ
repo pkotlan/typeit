@@ -1,19 +1,24 @@
+#import "../src/themes.typ": themes
+
 #let template(theme, doc) = {
+  assert(
+    theme in themes.values(),
+    message: "Unknown theme: " + theme,
+  )
 
   html.html({
     html.head({
       html.meta(charset: "utf-8")
-      html.link(
-        rel: "stylesheet",
-        href: theme + ".css",
-      )
+      for stylesheet in (theme + ".css", "components.css", "custom.css") {
+        html.link(rel: "stylesheet", href: stylesheet)
+      }
 
       html.title([
         #context document.title
       ])
     })
 
-    html.elem("nav", attrs: (style: "display: flex; gap: 1rem; flex-wrap: wrap;"))[
+    html.elem("nav")[
       #context {
         let docs = query(
           document,

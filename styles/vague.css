@@ -1,9 +1,10 @@
-/* Vague-inspired documentation stylesheet
+/* Vague color theme
    Palette: https://github.com/vague-theme/vague.nvim */
 
 :root {
   color-scheme: dark;
 
+  /* Theme-specific palette. Shared components never reference these names. */
   --black: #141415;
   --shadow: #1c1c24;
   --graphite: #252530;
@@ -27,159 +28,38 @@
   --iris: #7e98e8;
   --green: #7fa563;
 
+  /* Public theme roles. Keep these names identical in every theme.
+     Multiple roles may reference the same palette color. */
+  /* Main page background; use the darkest/lightest base of the theme. */
   --bg: var(--black);
+  /* Raised background for code and callout bodies; slightly offset from --bg. */
   --surface: var(--shadow);
+  /* Subtle separator for code blocks, tables, and horizontal rules. */
   --border: var(--graphite);
+  /* Primary text, headings, and selected text; high contrast against backgrounds. */
   --fg: var(--white);
+  /* Secondary text in blockquotes; quieter than --fg but still readable. */
   --text-muted: var(--gray);
-}
-
-@font-face {
-  font-family: "Monaspace Krypton";
-  src: url("fonts/MonaspaceKryptonVar.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  margin: 0 auto;
-  max-width: 900px;
-}
-
-body {
-  background-color: var(--bg);
-  color: var(--fg);
-  padding: 3rem 1.25rem 5rem;
-  font: 16px/1.7 system-ui, sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--fg);
-  line-height: 1.3;
-  margin: 2rem 0 0.75rem;
-  font-family: "Monaspace Krypton", monospace;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-p,
-ul,
-ol {
-  margin: 0 0 1rem;
-}
-
-li+li {
-  margin-top: 0.25rem;
-}
-
-/* Links */
-a {
-  color: var(--iris);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--aqua);
-  text-decoration: underline;
-}
-
-a:focus-visible {
-  outline: 2px solid var(--iris);
-  outline-offset: 3px;
-}
-
-/* Inline and block code */
-code,
-pre {
-  font-family: ui-monospace, 'Cascadia Code', monospace;
-}
-
-code {
-  color: var(--amber);
-  background: var(--surface);
-  padding: 0.15em 0.35em;
-  border-radius: 4px;
-  font-size: 0.9em;
-}
-
-pre {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 1rem;
-  overflow-x: auto;
-  line-height: 1.5;
-}
-
-pre code {
-  padding: 0;
-  color: var(--fg);
-  background: transparent;
-}
-
-/* Quotes, separators, and tables */
-blockquote {
-  margin: 1.5rem 0;
-  padding: 0.25rem 1rem;
-  border-left: 3px solid var(--cyan);
-  color: var(--text-muted);
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid var(--border);
-  margin: 2rem 0;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-}
-
-th,
-td {
-  padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid var(--border);
-  text-align: left;
-}
-
-th {
-  color: var(--aqua);
-}
-
-img,
-svg {
-  max-width: 100%;
-  height: auto;
-}
-
-nav {
-  font-family: "Monaspace Krypton", monospace;
-  border-bottom: 1px solid var(--muted);
-}
-
-::selection {
-  background: var(--storm);
-  color: var(--fg);
+  /* Links and keyboard focus outlines; a clear accent against --bg. */
+  --link: var(--iris);
+  /* Hovered links; a distinct, readable accent. */
+  --link-hover: var(--aqua);
+  /* Inline code text; a readable accent against --surface. */
+  --code: var(--amber);
+  /* Blockquote left border; a secondary accent. */
+  --quote: var(--cyan);
+  /* Table header text; a readable accent. */
+  --table-heading: var(--aqua);
+  /* Navigation bottom separator; a neutral separator color. */
+  --nav-border: var(--muted);
+  /* Selected text background; must contrast with --fg. */
+  --selection-bg: var(--storm);
+  /* Note/info callout titles and tinted headers; typically blue or cyan. */
+  --info: var(--blue);
+  /* Tip/success callout titles and tinted headers; green or another positive accent. */
+  --success: var(--green);
+  /* Warning/caution callout titles and tinted headers; typically gold or orange. */
+  --warning: var(--yellow);
+  /* Danger/error callout titles and tinted headers; typically red or pink. */
+  --danger: var(--red);
 }

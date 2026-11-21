@@ -1,0 +1,58 @@
+/* Rosé Pine (Moon, dark variant).
+   Palette: https://rosepinetheme.com/palette/
+   Role assignments below are typeit's choices, not upstream requirements. */
+
+:root {
+  color-scheme: dark;
+
+  /* Theme-specific palette. Prefix avoids collisions with public role names. */
+  --rp-base: #232136;
+  --rp-surface: #2a273f;
+  --rp-overlay: #393552;
+  --rp-muted: #6e6a86;
+  --rp-subtle: #908caa;
+  --rp-text: #e0def4;
+  --rp-love: #eb6f92;
+  --rp-gold: #f6c177;
+  --rp-rose: #ea9a97;
+  --rp-pine: #3e8fb0;
+  --rp-foam: #9ccfd8;
+  --rp-iris: #c4a7e7;
+  --rp-highlight-low: #2a283e;
+  --rp-highlight-med: #44415a;
+  --rp-highlight-high: #56526e;
+
+  /* Public theme roles. Reusing a palette color is intentional. */
+  /* Main page background; use the darkest/lightest base of the theme. */
+  --bg: var(--rp-base);
+  /* Raised background for code and callout bodies; slightly offset from --bg. */
+  --surface: var(--rp-surface);
+  /* Subtle separator for code blocks, tables, and horizontal rules. */
+  --border: var(--rp-highlight-med);
+  /* Primary text, headings, and selected text; high contrast against backgrounds. */
+  --fg: var(--rp-text);
+  /* Secondary text in blockquotes; quieter than --fg but still readable. */
+  --text-muted: var(--rp-subtle);
+  /* Links and keyboard focus outlines; a clear accent against --bg. */
+  --link: var(--rp-iris);
+  /* Hovered links; a distinct, readable accent. */
+  --link-hover: var(--rp-foam);
+  /* Inline code text; a readable accent against --surface. */
+  --code: var(--rp-rose);
+  /* Blockquote left border; a secondary accent. */
+  --quote: var(--rp-foam);
+  /* Table header text; a readable accent. */
+  --table-heading: var(--rp-foam);
+  /* Navigation bottom separator; a neutral separator color. */
+  --nav-border: var(--rp-highlight-med);
+  /* Selected text background; must contrast with --fg. */
+  --selection-bg: var(--rp-highlight-med);
+  /* Note/info callout titles and tinted headers; typically blue or cyan. */
+  --info: var(--rp-foam);
+  /* Tip/success callout titles and tinted headers; green or another positive accent. */
+  --success: var(--rp-foam);
+  /* Warning/caution callout titles and tinted headers; typically gold or orange. */
+  --warning: var(--rp-gold);
+  /* Danger/error callout titles and tinted headers; typically red or pink. */
+  --danger: var(--rp-love);
+}

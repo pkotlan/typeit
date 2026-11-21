@@ -1,0 +1,17 @@
+/* Site customization. Loaded last so these rules can override shared styles.
+   Font URLs are relative to this stylesheet in the generated site. */
+
+@font-face {
+  font-family: "Monaspace Krypton";
+  src: url("fonts/MonaspaceKryptonVar.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-body: system-ui, sans-serif;
+  --font-heading: "Monaspace Krypton", monospace;
+  /* Try the installed font first, then the bundled web font. */
+  --font-code: "JuliaMono", monospace;
+}

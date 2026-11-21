@@ -1,16 +1,20 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="vague.css"><title>Getting started</title></head><nav style="display: flex; gap: 1rem; flex-wrap: wrap;"><a href="index.html"><strong style="display: block">Home</strong></a><a href="#"><strong style="display: block">Getting started</strong></a><a href="components.html"><strong style="display: block">Components</strong></a></nav><body><h2>Getting started</h2><p>This is how you get started with typeit…</p><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"lib.typ"</span>: template
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="vague.css"><link rel="stylesheet" href="components.css"><link rel="stylesheet" href="custom.css"><title>Getting started</title></head><nav><a href="index.html"><strong style="display: block">Home</strong></a><a href="#"><strong style="display: block">Getting started</strong></a><a href="components.html"><strong style="display: block">Components</strong></a><a href="themes.html"><strong style="display: block">Themes</strong></a></nav><body><h2>Getting started</h2><p>This is how you get started with typeit…</p><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"lib.typ"</span>: template, themes
 
+<span style="color: #d73948">#</span><span style="color: #d73948">let</span> theme <span style="color: #d73948">=</span> themes.vague
 
 <span style="color: #74747c">// define the pages (possibly in separate files, then include them)</span>
 <span style="color: #74747c">// template will take care of the rest</span>
 <span style="color: #4b69c6">#</span><span style="color: #4b69c6">document</span>(<span style="color: #198810">"index.html"</span>, title: [Home])[
-  <span style="color: #d73948">#</span><span style="color: #d73948">show</span>: template.<span style="color: #4b69c6">with</span>(<span style="color: #198810">"vague"</span>)
+  <span style="color: #d73948">#</span><span style="color: #d73948">show</span>: template.<span style="color: #4b69c6">with</span>(theme)
 
+  <span style="color: #8b41b1">#</span><span style="color: #8b41b1">html</span>.<span style="color: #4b69c6">elem</span>(<span style="color: #198810">"p"</span>, attrs: (align: <span style="color: #198810">"center"</span>))[
+    <span style="color: #4b69c6">#</span><span style="color: #4b69c6">image</span>(<span style="color: #198810">"assets/logos/"</span> <span style="color: #d73948">+</span> theme <span style="color: #d73948">+</span> <span style="color: #198810">"_logo.svg"</span>, width: <span style="color: #b60157">50%</span>)
+  ]
   <span style="color: #d73948">#</span><span style="color: #d73948">include</span> <span style="color: #198810">"pages/home.typ"</span>
 ] <span style="color: #1d6c76">&lt;home></span>
 
 <span style="color: #4b69c6">#</span><span style="color: #4b69c6">document</span>(<span style="color: #198810">"gettingstarted.html"</span>, title: [Getting started])[
-  <span style="color: #d73948">#</span><span style="color: #d73948">show</span>: template.<span style="color: #4b69c6">with</span>(<span style="color: #198810">"vague"</span>)
+  <span style="color: #d73948">#</span><span style="color: #d73948">show</span>: template.<span style="color: #4b69c6">with</span>(theme)
 
   <span style="color: #d73948">#</span><span style="color: #d73948">include</span> <span style="color: #198810">"pages/gettingstarted.typ"</span>
 
@@ -18,18 +22,24 @@
 
 
 <span style="color: #4b69c6">#</span><span style="color: #4b69c6">document</span>(<span style="color: #198810">"components.html"</span>, title: [Components])[
-  <span style="color: #d73948">#</span><span style="color: #d73948">show</span>: template.<span style="color: #4b69c6">with</span>(<span style="color: #198810">"vague"</span>)
+  <span style="color: #d73948">#</span><span style="color: #d73948">show</span>: template.<span style="color: #4b69c6">with</span>(theme)
 
   <span style="color: #d73948">#</span><span style="color: #d73948">include</span> <span style="color: #198810">"pages/components.typ"</span>
 
 ] <span style="color: #1d6c76">&lt;gettingstarted></span>
 
 
+<span style="color: #4b69c6">#</span><span style="color: #4b69c6">document</span>(<span style="color: #198810">"themes.html"</span>, title: [Themes])[
+  <span style="color: #d73948">#</span><span style="color: #d73948">show</span>: template.<span style="color: #4b69c6">with</span>(theme)
+
+  <span style="color: #d73948">#</span><span style="color: #d73948">include</span> <span style="color: #198810">"pages/themes.typ"</span>
+
+] <span style="color: #1d6c76">&lt;themes></span>
+
 <span style="color: #74747c">// css</span>
-<span style="color: #4b69c6">#</span><span style="color: #4b69c6">asset</span>(
-  <span style="color: #198810">"vague.css"</span>,
-  <span style="color: #4b69c6">read</span>(<span style="color: #198810">"styles/vague.css"</span>, encoding: <span style="color: #d73948">none</span>),
-)
+<span style="color: #d73948">#</span><span style="color: #d73948">for</span> stylesheet <span style="color: #d73948">in</span> (<span style="color: #198810">"vague.css"</span>, <span style="color: #198810">"rosepine.css"</span>, <span style="color: #198810">"rosepine-moon.css"</span>, <span style="color: #198810">"rosepine-dawn.css"</span>, <span style="color: #198810">"components.css"</span>, <span style="color: #198810">"custom.css"</span>) {
+  <span style="color: #4b69c6">asset</span>(stylesheet, <span style="color: #4b69c6">read</span>(<span style="color: #198810">"styles/"</span> <span style="color: #d73948">+</span> stylesheet, encoding: <span style="color: #d73948">none</span>))
+}
 
 <span style="color: #74747c">// font</span>
 <span style="color: #4b69c6">#</span><span style="color: #4b69c6">asset</span>(
